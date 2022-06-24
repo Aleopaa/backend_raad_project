@@ -1,14 +1,11 @@
-const express = require('express')
+const app = require("express")();
 const cors = require('cors')
 
-const server = express();
-server.use(cors());
-server.use(express.json())
+app.use(cors());
+
 
 const taskRoutes = require('./routes/tasks')
 
-server.use('/tasks', taskRoutes)
+app.get('/tasks', (req,res) => res.send(`Welcome to app`))
 
-server.get('/', (req,res) => res.send(`Welcome to server`))
-
-module.exports = server;
+module.exports = app;
