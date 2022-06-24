@@ -6,6 +6,6 @@ app.use(cors());
 
 const taskRoutes = require('./routes/tasks')
 
-app.get('/tasks', (req,res) => res.send(`Welcome to app`))
+app.get('/', (req,res) => res.send(`Welcome to app`))
 
 module.exports = app;

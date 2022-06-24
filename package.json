@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "jest --watchAll --coverage",
-    "dev": "nodemon server.js",
-    "start": "nodemon server.js"
+    "dev": "nodemon index.js",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",

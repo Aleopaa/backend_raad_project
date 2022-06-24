@@ -1,15 +1,8 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 
-const Task = require('../models/task');
+const taskController = require('../controllers/tasks')
 
-router.get('/', async (req, res) => {
-    try {
-        const tasks = await Task.all
-        res.status(200).json({data: tasks})
-    } catch(err) {
-        console.error(err);
-        res.status(500).json({ error: err })
-    }
-});
+router.get('/', taskController.index);
 
-module.exports = router
+module.exports = router;
