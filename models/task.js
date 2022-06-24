@@ -1,7 +1,7 @@
 const {init} = require("../initdb")
 
 module.exports = class Task {
-    constructor(data, author){
+    constructor(data){
         this.id = data.id;
         this.habit = data.habit;
         this.comment = data.comment;
@@ -11,7 +11,7 @@ module.exports = class Task {
         return new Promise (async (resolve, reject) => {
             try {
                 const taskData = await init();
-                // let tasks = taskData.rows.map(b => new Task(b));
+                let tasks = taskData.rows.map(b => new Task(b));
                 resolve (tasks);
             } catch (err) {
                 reject('Task not found');
