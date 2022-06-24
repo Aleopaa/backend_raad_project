@@ -1,10 +1,6 @@
-module.exports = [
+db.tasks.drop();
 
-]
-
-db.celebrities.drop();
-
-db.celebrities.insertMany([
+db.tasks.insertMany([
     {
         id: 1,
         habit: 'Drink Water',
